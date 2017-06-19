@@ -50,6 +50,16 @@ public class LinkedList
     public void addAtIndex(int index, int data)
     {
         //complete this method
+        Node newNode = new Node(data);
+        Node previous = head;
+        int count = 1;
+        while(count < index -1){
+            previous = previous.next;
+            count++;
+        }
+        Node current = previous.next;
+        newNode.next = current;
+        previous.next = newNode;
     }
 
     //method remove first node

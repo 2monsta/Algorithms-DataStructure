@@ -56,7 +56,7 @@ public class myTest
         //Testing method removeLastNode
         //===============================
 
-        System.out.println("Testing removeLastNode");
+        System.out.println("Testing removeLastNode()");
         System.out.println("Removing value 5 from last node");
         System.out.print("List content before removing last node: ");
         myList.printList(); //List content before removing last node
@@ -72,7 +72,7 @@ public class myTest
         //Testing method removeAtIndex
         //===============================
 
-        System.out.println("Testing removeAtIndex");
+        System.out.println("Testing removeAtIndex()");
         System.out.println("Removing index 3 from list");
         System.out.print("List content before removing index 3: ");
         myList.printList(); //List content before removing at index
@@ -81,6 +81,20 @@ public class myTest
         System.out.print("List content after removing index 3: ");
         myList.printList();
 
+        System.out.println(); //new line
+
+        //===============================
+        //Testing method addAtIndex
+        //===============================
+
+        System.out.println("Testing addAtIndex()");
+        System.out.println("Add index 3 data 3 to list");
+        System.out.print("List content before adding index 3 data 3: ");
+        myList.printList();//List content before adding at index
+        System.out.println(); //new line
+        myList.addAtIndex(3,3); // adding to index 3 data 3
+        System.out.print("List content after adding index 3 data 3: ");
+        myList.printList();
     }
 }
 

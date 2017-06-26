@@ -7,7 +7,7 @@
 public class TestStack_Yunfei_Li {
 
     public static void main(String[] args) {
-        Stack_Yunfei_Li myStack = new Stack_Yunfei_Li(); //create a list object
+        Stack_Yunfei_Li myStack = new Stack_Yunfei_Li(); //create a stack object
 
 
         //method to test push(e)
@@ -54,7 +54,7 @@ public class TestStack_Yunfei_Li {
         System.out.println();
         System.out.println("Testing isEmpty()");
         System.out.print("Is the stack empty: ");
-        System.out.println(myStack.isEmpty());
+        System.out.println(myStack.isEmpty()); // should return false
 
     }
 }

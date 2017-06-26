@@ -3,9 +3,6 @@
 //Assignment 4 - stack
 //Term: Summer 2017
 
-import java.util.Scanner;
-import java.util.Stack;
-
 /*
 This class define a linked list that stores integer values.
 */
@@ -36,7 +33,6 @@ public class Stack_Yunfei_Li{
         size++; //increase list size by one
     }
 
-
     //================= your part to complete ==============
     //method to get size of the stack
     public int getSize(){
@@ -52,9 +48,25 @@ public class Stack_Yunfei_Li{
     public int top(){
         return tail.data;
     }
-
-    // method to push(e)
+    // method to push(e) for testStack
     public void push(int data){
+        Node newTop = new Node(data); //creates a new node
+        if(head == null){ //check if the node is empty
+            head = newTop;
+            tail = newTop;
+        }else{
+            //generic case to add to top of the stack
+            tail.next = newTop;
+            tail = tail.next;
+        }
+        size++;
+    }
+    //method to return top with string
+    public String topToString(){
+        return tail.data1;
+    }
+    //method to push(e) to string for reverseString
+    public void pushToString(String data){
         Node newTop = new Node(data); //creates a new node
         if(head == null){ //check if the node is empty
             head = newTop;
@@ -103,14 +115,19 @@ public class Stack_Yunfei_Li{
     }
 
     //class to create nodes as objects
-    private class Node
+    public class Node
     {
         private int data;  //data field
+        private String data1;
         private Node next; //link field
 
         public Node(int item) //constructor method
         {
             data = item;
+            next = null;
+        }
+        public Node(String items){
+            data1 = items;
             next = null;
         }
     }

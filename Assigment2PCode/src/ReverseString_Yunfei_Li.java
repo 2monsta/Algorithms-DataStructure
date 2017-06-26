@@ -7,56 +7,36 @@ import java.util.Scanner;
 
 public class ReverseString_Yunfei_Li {
 
-    //method to reverseString()
-//    public static void reverse(){
-//        Scanner input = new Scanner(System.in);
-//        Stack_Yunfei_Li st = new Stack_Yunfei_Li();
-//        System.out.println("Enter a string");
-//        String str[] = input.nextLine().split(" ");
-//        for(int i = 0; i<str.length; i++){
-//            st.push(i);
-//        }
-////        String finalString = "";
-////        for(int i = 0; i<st.getSize(); i++){
-////            finalString += st.pop();
-////            st.pop();
-////        }
-//        while(st.isEmpty() == true){
-//            System.out.println(st.top());
-//            st.pop();
-//        }
-//
-//    }
-
-
-
-    public static void reverse()
-    {
+    //method to reverse a string using stack
+    public static void reverse()throws Exception {
+        //take user input
         Scanner input = new Scanner(System.in);
+        //create new stack
         Stack_Yunfei_Li st = new Stack_Yunfei_Li();
-        System.out.println("Enter a string");
+        System.out.print("Enter a string: ");
+        //store string into string array
         String str[] = input.nextLine().split(" ");
-        for(int i = 0; i<str.length; i++){
-            st.push(i);
+        System.out.println();
+        System.out.print("input string: ");
+        //loop through the string array and push to stack
+        for (int i = 0; i < str.length; i++) {
+            System.out.print(str[i] + " ");
+            st.pushToString(str[i]);
         }
-
-        String[] reversedArray = new String[st.getSize()];
-
-        for(int i = 0; i<st.getSize(); i++){
-            reversedArray[i] = st.pop();
+        System.out.println();
+        System.out.print("output string: ");
+        //loop through the stack and print out top of the stack and then pop the stack
+        while (st.isEmpty() !=true) {
+            System.out.print(st.topToString() + " ");
+            st.pop();
         }
-
-        String reverseStr = "";
-
-        for(String word : reversedArray) {
-            reverseStr += word + " ";
-        }
-
-        System.out.println(reverseStr); //could use reversedStr.trim() to get rid of leading and trailing white space.
-
+        System.out.println();
     }
+
     public static void main(String[] args) {
-        reverse();
+        try{
+            reverse();
+        }catch (Exception e){
+        }
     }
-
 }

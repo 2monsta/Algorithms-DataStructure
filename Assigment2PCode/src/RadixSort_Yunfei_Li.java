@@ -78,56 +78,67 @@ public class RadixSort_Yunfei_Li {
             }
             //emptying queue
             j=0;
-            for(int c = 1; c<=zero.getSize(); c++){
+            while(zero.getSize()>0){
                 arr[j] = zero.front();
                 zero.dequeue();
                 j++;
             }
-            for(int c = 1; c<=one.getSize(); c++){
+            zero.isEmpty();
+            while(one.getSize()>0){
                 arr[j] = one.front();
                 one.dequeue();
                 j++;
             }
-            for(int c = 1; c<=two.getSize(); c++){
+            one.isEmpty();
+            while(two.getSize()>0){
                 arr[j] = two.front();
                 two.dequeue();
                 j++;
             }
-            for(int c = 1; c<=three.getSize(); c++){
+            two.isEmpty();
+            while(three.getSize()>0){
                 arr[j] = three.front();
                 three.dequeue();
                 j++;
             }
-            for(int c = 1; c<=four.getSize(); c++){
+            three.isEmpty();
+            while(four.getSize()>0){
                 arr[j] = four.front();
                 four.dequeue();
                 j++;
             }
-            for(int c = 1; c<=five.getSize(); c++){
+            four.isEmpty();
+            while(five.getSize()>0){
                 arr[j] = five.front();
                 five.dequeue();
                 j++;
             }
-            for(int c = 1; c<=six.getSize(); c++){
-                arr[j] = six.front();
+            five.isEmpty();
+            while(six.getSize()>0){
+                arr[j] = five.front();
                 six.dequeue();
                 j++;
             }
-            for(int c = 1; c<=seven.getSize(); c++){
+            six.isEmpty();
+            while(seven.getSize()>0){
                 arr[j] = seven.front();
                 seven.dequeue();
                 j++;
             }
-            for(int c = 1; c<=eight.getSize(); c++){
+            seven.isEmpty();
+            while(eight.getSize()>0){
                 arr[j] = eight.front();
                 eight.dequeue();
                 j++;
             }
-            for(int c = 1; c<=nine.getSize(); c++){
+            eight.isEmpty();
+            while(nine.getSize()>0){
                 arr[j] = nine.front();
                 nine.dequeue();
                 j++;
             }
+            nine.isEmpty();
+
         }
 
 

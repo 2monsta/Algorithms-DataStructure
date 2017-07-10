@@ -7,7 +7,6 @@ public class Queue_Yunfei_Li {
         private Node first, last;
         private int size;
 
-        //constructor to create a list object with head, tail, and size.
         public Queue_Yunfei_Li()
         {
             first = null;

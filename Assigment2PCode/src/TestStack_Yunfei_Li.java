@@ -1,6 +1,6 @@
 //Name: Yunfei Li
 //Class: CS5040
-//Assignment 4 - stack
+//Assignment 4 - stack(test stack)
 //Term: Summer 2017
 
 

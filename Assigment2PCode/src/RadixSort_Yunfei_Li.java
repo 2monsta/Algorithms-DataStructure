@@ -5,28 +5,26 @@
 import java.util.Scanner;
 
 public class RadixSort_Yunfei_Li {
-
+    // extract the digit
     long ExtractDigit(long n, int position){
         for(int i=0;i<position-1;i++){
             n=n/10;
         }
         return n%10;
     }
-    int getMax(long arr[]){ //method to find max in a given array and counts its digits and return it
+    //method to find max in a given array and counts its digits and return it
+    int getMax(long arr[]){
 
         long max=arr[0];
-        for(int i=1;i<arr.length;i++)
-        {
+        for(int i=1;i<arr.length;i++){
             if(arr[i]>max)
                 max = arr[i];
         }
         int c=0;
-        while(max>0)
-        {
+        while(max>0){
             max=max/10;
             c++;
         }
-
         return c;
     }
 
@@ -51,8 +49,8 @@ public class RadixSort_Yunfei_Li {
         int max = this.getMax(arr);
 
         //enqueuing to the queue
-        for(int i = 1; i<=max; i ++){
-            for (j = 0; j <arr.length; j++) {
+        for(int i = 0; i<max; i++){
+            for (j = 0; j <arr.length; j++){
                 digit = this.ExtractDigit(arr[j], i);
                 if(digit ==0){
                     zero.enqueue((int) arr[j]);
@@ -78,77 +76,65 @@ public class RadixSort_Yunfei_Li {
             }
             //emptying queue
             j=0;
-            while(zero.getSize()>0){
-                arr[j] = zero.front();
-                zero.dequeue();
-                j++;
+            while(zero.getSize()>0){ //while there is a number located in zero, do the following
+                arr[j] = zero.front(); //put into array position 0
+                zero.dequeue(); //empty out the front
+                j++; //increase the position by 1
             }
-            zero.isEmpty();
             while(one.getSize()>0){
                 arr[j] = one.front();
                 one.dequeue();
                 j++;
             }
-            one.isEmpty();
             while(two.getSize()>0){
                 arr[j] = two.front();
                 two.dequeue();
                 j++;
             }
-            two.isEmpty();
             while(three.getSize()>0){
                 arr[j] = three.front();
                 three.dequeue();
                 j++;
             }
-            three.isEmpty();
             while(four.getSize()>0){
                 arr[j] = four.front();
                 four.dequeue();
                 j++;
             }
-            four.isEmpty();
             while(five.getSize()>0){
                 arr[j] = five.front();
                 five.dequeue();
                 j++;
             }
-            five.isEmpty();
             while(six.getSize()>0){
-                arr[j] = five.front();
+                arr[j] = six.front();
                 six.dequeue();
                 j++;
             }
-            six.isEmpty();
             while(seven.getSize()>0){
                 arr[j] = seven.front();
                 seven.dequeue();
                 j++;
             }
-            seven.isEmpty();
             while(eight.getSize()>0){
                 arr[j] = eight.front();
                 eight.dequeue();
                 j++;
             }
-            eight.isEmpty();
             while(nine.getSize()>0){
                 arr[j] = nine.front();
                 nine.dequeue();
                 j++;
             }
-            nine.isEmpty();
-
         }
-
 
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a number");
+        System.out.println("Enter six numbers");
         //Scanning input into the array
-        long inputs[] = new long [3]; //creates an array to store 6 numbers
+        long inputs[] = new long [6]; //creates an array to store 6 numbers
         for(int i=0; i<inputs.length; i++){
             inputs[i] = input.nextInt(); //adding the user data to inputs
         }
@@ -158,14 +144,15 @@ public class RadixSort_Yunfei_Li {
             System.out.print(inputs[i] + " ");
         }
         RadixSort_Yunfei_Li r = new RadixSort_Yunfei_Li();
-        r.radixSort(inputs);
+        //try{
+            r.radixSort(inputs);
+        //}catch(Exception e){
+        //}
         System.out.println();
 
         System.out.print("Input array after sorting:");
         for(int i = 0; i<inputs.length; i++){
             System.out.print(inputs[i] + " ");
         }
-
-
     }
 }

@@ -5,6 +5,7 @@
 public class TestQueue_Yunfei_Li {
 
     public static void newLine(){
+
         System.out.println();
     }
     public static void main(String[] args) {

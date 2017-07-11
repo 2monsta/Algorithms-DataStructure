@@ -20,38 +20,38 @@ public class RadixSort_Yunfei_Li {
             if(arr[i]>max)
                 max = arr[i];
         }
-        int c=0;
+        int maxDigit=0;
         while(max>0){
             max=max/10;
-            c++;
+            maxDigit++;
         }
-        return c;
+        return maxDigit;
     }
 
     void radixSort(long arr[]){
         //sorting with radix
-        //creating 10 queue objects
+        //creating 10 queue objects or buckets
         Queue_Yunfei_Li zero, one, two, three, four, five, six, seven, eight, nine;
-        zero = new Queue_Yunfei_Li();
-        one = new Queue_Yunfei_Li();
-        two = new Queue_Yunfei_Li();
-        three = new Queue_Yunfei_Li();
-        four = new Queue_Yunfei_Li();
-        five = new Queue_Yunfei_Li();
-        six = new Queue_Yunfei_Li();
-        seven = new Queue_Yunfei_Li();
-        eight = new Queue_Yunfei_Li();
-        nine = new Queue_Yunfei_Li();
+        zero = new Queue_Yunfei_Li(); //bucket zero
+        one = new Queue_Yunfei_Li(); //bucket one
+        two = new Queue_Yunfei_Li(); //bucket two
+        three = new Queue_Yunfei_Li(); //bucket three
+        four = new Queue_Yunfei_Li(); //bucket four
+        five = new Queue_Yunfei_Li(); //bucket five
+        six = new Queue_Yunfei_Li(); //bucket six
+        seven = new Queue_Yunfei_Li(); //bucket seven
+        eight = new Queue_Yunfei_Li(); //bucket eight
+        nine = new Queue_Yunfei_Li(); //bucket nine
 
 
         int j;
-        long digit;
-        int max = this.getMax(arr);
+        int max = getMax(arr);
 
         //enqueuing to the queue
-        for(int i = 0; i<max; i++){
+        for(int i = 1; i<=max; i++){ //looping through all the digit
             for (j = 0; j <arr.length; j++){
-                digit = this.ExtractDigit(arr[j], i);
+                long digit = this.ExtractDigit(arr[j], i); //extract all the digit from input one at a time
+                //placing all the numbers in the queue
                 if(digit ==0){
                     zero.enqueue((int) arr[j]);
                 }else if(digit ==1){
@@ -130,6 +130,15 @@ public class RadixSort_Yunfei_Li {
 
     }
 
+
+
+    /*I know i'm missing something, it only works when the same digit is present
+      For example input:39 38 37 36 35 32 would work, but 213 3465 7 29 541 45 would not
+      I'm thinking that there's something wrong with the getMax method because it's not looping through
+      all the digits. That's just what i'm thinking could be wrong.
+      Please provide feedback on how to fix this code, it's been a frustrating week.
+    */
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter six numbers");
@@ -143,13 +152,15 @@ public class RadixSort_Yunfei_Li {
         for(int i = 0; i<inputs.length; i++){
             System.out.print(inputs[i] + " ");
         }
-        RadixSort_Yunfei_Li r = new RadixSort_Yunfei_Li();
-        //try{
-            r.radixSort(inputs);
-        //}catch(Exception e){
-        //}
+        RadixSort_Yunfei_Li r = new RadixSort_Yunfei_Li(); //creates the object
+        //trying to catch all the errors
+        try{
+            r.radixSort(inputs); //sorting the inputs
+        }catch(Exception e){
+            System.out.println("something bad happened");
+        }
         System.out.println();
-
+        //printing out the inputs after sorting
         System.out.print("Input array after sorting:");
         for(int i = 0; i<inputs.length; i++){
             System.out.print(inputs[i] + " ");

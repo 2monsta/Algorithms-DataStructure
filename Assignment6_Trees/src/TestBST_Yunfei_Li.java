@@ -15,6 +15,7 @@ public class TestBST_Yunfei_Li {
 
         System.out.print("Inorder (sorted): ");
         tree.inorder();
+
         System.out.print("\nPostorder: ");
         tree.postorder();
         System.out.print("\nPreorder: ");

@@ -1,4 +1,7 @@
-
+//Name: Yunfei Li
+//Class: CS5040
+//Assignment 6 - Trees
+//Term: Summer 2017
 public interface Tree_Yunfei_Li<E> extends Iterable<E> {
     /** Return true if the element is in the tree */
     public boolean search(E e);

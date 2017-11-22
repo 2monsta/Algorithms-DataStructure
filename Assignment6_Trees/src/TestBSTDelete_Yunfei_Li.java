@@ -1,4 +1,7 @@
-
+//Name: Yunfei Li
+//Class: CS5040
+//Assignment 6 - Trees
+//Term: Summer 2017
 public class TestBSTDelete_Yunfei_Li {
     public static void main(String[] args) {
         BST_Yunfei_Li<String> tree = new BST_Yunfei_Li<>();

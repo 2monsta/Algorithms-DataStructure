@@ -1,3 +1,7 @@
+//Name: Yunfei Li
+//Class: CS5040
+//Assignment 6 - Trees
+//Term: Summer 2017
 public class  BST_Yunfei_Li<E extends Comparable<E>>
         extends AbstractTree_Yunfei_Li<E>{
     protected TreeNode<E> root;

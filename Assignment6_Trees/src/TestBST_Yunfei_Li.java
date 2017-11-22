@@ -1,3 +1,7 @@
+//Name: Yunfei Li
+//Class: CS5040
+//Assignment 6 - Trees
+//Term: Summer 2017
 
 public class TestBST_Yunfei_Li {
     public static void main(String[] args) {

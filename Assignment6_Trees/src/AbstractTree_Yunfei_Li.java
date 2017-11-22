@@ -1,5 +1,10 @@
 import sun.reflect.generics.tree.Tree;
 
+
+//Name: Yunfei Li
+//Class: CS5040
+//Assignment 6 - Trees
+//Term: Summer 2017
 public abstract class AbstractTree_Yunfei_Li<E> implements Tree_Yunfei_Li<E>{
     @Override
     /** Inorder traversal from the root*/
